@@ -21,6 +21,7 @@ body {
     background: url(../img/cubes.png) #F4F4F4;
 }
 
+/* start header */
 header {
     width: 85%;
     height: auto;
@@ -28,10 +29,11 @@ header {
     margin: 0 auto;
 }
 
+/* start logo */
 .logo {
     float: left;
     width: 540px;
-    height: 140px;
+    height: 110px;
 }
 
 .logo a {
@@ -41,9 +43,50 @@ header {
     color: #2979CD;
     text-shadow: 0 0 0 black, 1px 1px 0 black, 2px 2px 0 black;
     transition: all 500ms;
+    line-height: 90px;
+    margin-left: 10px;
 }
 
 .logo a:hover {
     cursor: pointer;
     text-shadow: 0 0 0 black, -1px -1px 0 black, -2px -2px 0 black;
 }
+
+/* end logo */
+
+/* start menu */
+.menu {
+    clear: both;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(to bottom, #F9F9F9F9 0, #E9E9E9 100%);
+    border: 1px solid #C9C9C9;
+    border-radius: 8px;
+    box-shadow: 0px 1px 1px #ccc;
+    overflow: hidden;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    float: left;
+    line-height: 44px;
+    border-right: 1px solid #D6D6D6;
+}
+
+.menu ul li a {
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    color: #838282;
+}
+
+.menu ul li a:hover{
+    background: linear-gradient(to bottom, #f2f2f2 0px, #dad9d4 100%);
+}
+/* end menu */
+
+/* end header */
