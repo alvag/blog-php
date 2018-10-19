@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif, Helvetica, Arial;
+    text-decoration: none
 }
 
 .clearfix{
@@ -17,5 +18,32 @@
 }
 
 body {
-    background: url(../img//cubes.png) #F4F4F4;
+    background: url(../img/cubes.png) #F4F4F4;
+}
+
+header {
+    width: 85%;
+    height: auto;
+    background: transparent;
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+    width: 540px;
+    height: 140px;
+}
+
+.logo a {
+    font-family: 'fajala', Helvetica;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #2979CD;
+    text-shadow: 0 0 0 black, 1px 1px 0 black, 2px 2px 0 black;
+    transition: all 500ms;
+}
+
+.logo a:hover {
+    cursor: pointer;
+    text-shadow: 0 0 0 black, -1px -1px 0 black, -2px -2px 0 black;
 }
