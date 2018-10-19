@@ -1,0 +1,21 @@
+@font-face{
+    font-family: "fajala";
+    src: url(../fonts/fuente.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, Helvetica, Arial;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+body {
+    background: url(../img//cubes.png) #F4F4F4;
+}
