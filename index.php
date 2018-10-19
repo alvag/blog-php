@@ -45,7 +45,7 @@
                     <label for="password">Contraseña</label>
                     <input type="password" name="password">
 
-                    <input type="submit" value="Entrar">
+                    <input class="btn" type="submit" value="Entrar">
                 </form>
             </div>
 
@@ -65,7 +65,7 @@
                     <label for="password">Contraseña</label>
                     <input type="password" name="password">
 
-                    <input type="submit" value="Registrar">
+                    <input class="btn" type="submit" value="Registrar">
                 </form>
             </div>
         </aside>
