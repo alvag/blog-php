@@ -14,7 +14,7 @@ class DataBase {
 		// trae los caracteres en escritura latina sin ningun problema
         $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 
-		$link = new PDO("mysql:host=localhost;dbname=blog_php", DB_USER, DB_PASSWORD, $options);
+		$link = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME."", DB_USER, DB_PASSWORD, $options);
 		return $link;
 	}
 
