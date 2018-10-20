@@ -32,7 +32,7 @@ include_once 'helpers/utils.helper.php';
                 </div>
             <?php else: ?>
                 <div class="alert alert-error">
-                    Error al registrar.
+                    Error al registrar usuario.
                 </div>
             <?php endif ?>
         <?php endif ?>

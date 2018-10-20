@@ -21,6 +21,19 @@ body {
     background: url(../img/cubes.png) #F4F4F4;
 }
 
+.alert {
+    padding: 0 5px 5px 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.alert-success {
+    color: green;
+}
+
+.alert-error {
+    color: red;
+}
+
 /* start header */
 header {
     width: 85%;
