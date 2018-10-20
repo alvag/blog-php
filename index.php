@@ -6,6 +6,9 @@
 */
 
 require_once "controllers/template.controller.php";
+require_once 'controllers/user.controller.php';
+
+include_once 'helpers/utils.helper.php';
 
 $template = new TemplateController();
 $template->template();

@@ -5,6 +5,7 @@
 * Time: 22:17:12
 */
 
+
 function isValidName($name) {
     return !empty($name) && !is_numeric($name) && !preg_match("/[0-9]/", $name);
 }
@@ -20,4 +21,17 @@ function hasError($errors, $field) {
     } else {
         return false;
     }
+}
+
+function getValueSession($session, $field) {
+    if (isset($_SESSION[$session])) {
+        $arr = $_SESSION[$session];
+        return $arr[$field];
+    } else {
+        return '';
+    }
+}
+
+function encryptPassword($password) {
+    return password_hash($password, PASSWORD_BCRYPT, ['const' => 4]);
 }
