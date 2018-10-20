@@ -4,7 +4,7 @@
 * Date: 2018/10/19
 * Time: 21:35:18
 */
-
+session_start();
 require_once 'modules/header.php';
 require_once 'modules/sidebar.php';
 require_once 'modules/posts.php';

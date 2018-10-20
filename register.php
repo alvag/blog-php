@@ -5,6 +5,7 @@
 * Time: 21:57:34
 */
 
+session_start();
 require_once 'helpers/utils.helper.php';
 
 if (isset($_POST)) {
@@ -15,22 +16,28 @@ if (isset($_POST)) {
 
     $errors = array();
 
-    if (!Utils::isValidName($firstName)) {
-        $errors['firstName'] = 'El nombre no es válido.';
+    if (!isValidName($firstName)) {
+        $errors['firstName'] = true;
     }
 
-    if (!Utils::isValidName($lastName)) {
-        $errors['lastName'] = 'El apellido no es válido.';
+    if (!isValidName($lastName)) {
+        $errors['lastName'] = true;
     }
 
-    if (!Utils::isValidEmail($email)) {
-        $errors['email'] = 'El email no tiene un formato válido.';
+    if (!isValidEmail($email)) {
+        $errors['email'] = true;
     }
 
     if (empty($password)) {
-        $errors['password'] = 'La contraseña es requerida.';
+        $errors['password'] = true;
     }
 
-
+    if (count($errors) == 0) {
+        unset($_SESSION["errors_register"]);
+        header("Location: index.php");
+    } else {
+        $_SESSION["errors_register"] = $errors;
+        header("Location: index.php");
+    }
 
 }
