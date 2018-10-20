@@ -41,4 +41,6 @@ require_once 'includes/connection.php';
         <!-- end menu -->
 
     </header>
+
+    <div class="container">
     <!-- end header -->

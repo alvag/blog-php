@@ -7,6 +7,10 @@
 
 ?>
 
+</div>
+
+<div class="clearfix"></div>
+
 <!-- start footer -->
 <footer>
     <p>Desarrollado por Max Alva &copy; 2018</p>
