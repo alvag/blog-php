@@ -1,75 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog de Videojuegos</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-</head>
-<body>
-    <!-- start header -->
-    <header>
+<?php
+/**
+* Created by Max Alva
+* Date: 2018/10/19
+* Time: 21:01:20
+*/
 
-        <div class="logo">
-            <a href="index.php">Blog de Videojuegos</a>
-        </div>
-
-        <!-- start menu -->
-        <nav class="menu">
-            <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="index.php">Categoria 1</a></li>
-                <li><a href="index.php">Categoría 2</a></li>
-                <li><a href="/">Categoría 3</a></li>
-                <li><a href="/">Categoría 4</a></li>
-                <li><a href="/">Sobre mí</a></li>
-                <li><a href="/">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="clearfix"></div>
-        <!-- end menu -->
-
-    </header>
-    <!-- end header -->
+require_once 'includes/views/header.php';
+?>
 
     <div class="container">
-        <!-- start sidebar -->
-        <aside class="sidebar">
-            <div class="login">
-                <h3>Inicia sesión</h3>
-                <form action="login.php" method="post">
-                    <label for="email">Email</label>
-                    <input type="email" name="email">
 
-                    <label for="password">Contraseña</label>
-                    <input type="password" name="password">
-
-                    <input class="btn" type="submit" value="Entrar">
-                </form>
-            </div>
-
-            <div class="register">
-                <h3>Regístrate</h3>
-                <form action="register.php" method="post">
-
-                    <label for="firstName">Nombre</label>
-                    <input type="text" name="firstName">
-
-                    <label for="lastName">Apellidos</label>
-                    <input type="text" name="firstName">
-
-                    <label for="email">Email</label>
-                    <input type="email" name="email">
-
-                    <label for="password">Contraseña</label>
-                    <input type="password" name="password">
-
-                    <input class="btn" type="submit" value="Registrar">
-                </form>
-            </div>
-        </aside>
-        <!-- end sidebar -->
+        <?php require_once 'includes/views/sidebar.php'; ?>
 
         <div class="main">
 
@@ -120,10 +61,6 @@
 
     <div class="clearfix"></div>
 
-    <!-- start footer -->
-    <footer>
-        <p>Desarrollado por Max Alva &copy; 2018</p>
-    </footer>
-    <!-- end footer -->
+    <?php require_once 'includes/views/footer.php'; ?>
 </body>
 </html>
