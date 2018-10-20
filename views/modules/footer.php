@@ -15,4 +15,7 @@
 <footer>
     <p>Desarrollado por Max Alva &copy; 2018</p>
 </footer>
+
+</body>
+</html>
 <!-- end footer -->
