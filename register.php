@@ -10,12 +10,13 @@ require_once 'controllers/user.controller.php';
 
 if (isset($_POST)) {
     $request = $_POST;
-    $_SESSION['register_form'] = $_POST;
 
-    $request['firstName'] = isset($_POST['firstName']) ? $_POST['firstName'] : null;
-    $request['lastName'] = isset($_POST['lastName']) ? $_POST['lastName'] : null;
-    $request['email'] = isset($_POST['email']) ? $_POST['email'] : null;
-    $request['password']= isset($_POST['password']) ? $_POST['password'] : null;
+    $request['firstName'] = getValue($_POST['firstName']);
+    $request['lastName'] = getValue($_POST['lastName']);
+    $request['email'] = getValue($_POST['email']);
+    $request['password']= getValue($_POST['password']);
+
+    $_SESSION['register_form'] = $request;
 
     $errors = array();
 

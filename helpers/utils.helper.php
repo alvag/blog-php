@@ -5,6 +5,9 @@
 * Time: 22:17:12
 */
 
+function getValue($value) {
+    return (isset($value) && trim($value) != NULL) ? trim($value) : NULL;
+}
 
 function isValidName($name) {
     return !empty($name) && !is_numeric($name) && !preg_match("/[0-9]/", $name);
