@@ -9,7 +9,6 @@ include_once 'helpers/utils.helper.php';
 require_once 'controllers/user.controller.php';
 
 if (isset($_POST)) {
-    $request = $_POST;
 
     $request['firstName'] = getValue($_POST['firstName']);
     $request['lastName'] = getValue($_POST['lastName']);
@@ -37,7 +36,7 @@ if (isset($_POST)) {
     }
 
     if (count($errors) == 0) {
-        unset($_SESSION['errors_register']);
+        unset($_SESSION['register_errors']);
         $request['password'] = encryptPassword($request['password']);
         if (UserController::create($request)) {
             $_SESSION['register_success'] = true;
@@ -47,7 +46,7 @@ if (isset($_POST)) {
         }
     } else {
         unset($_SESSION['register_success']);
-        $_SESSION['errors_register'] = $errors;
+        $_SESSION['register_errors'] = $errors;
     }
     header('Location: index.php');
 }

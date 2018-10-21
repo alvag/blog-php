@@ -9,14 +9,37 @@ include_once 'helpers/utils.helper.php';
 ?>
 <!-- start sidebar -->
 <aside class="sidebar">
+
+    <?php if (isset($_SESSION['user'])): ?>
+        <?php $user = $_SESSION['user']; ?>
+        <div class="logged-in">
+            <h3><?php echo 'Bienvenido '.$user->getFirstName(); ?></h3>
+        </div>
+    <?php endif; ?>
+
     <div class="login">
         <h3>Inicia sesión</h3>
+
+        <?php if (isset($_SESSION['login_success'])): ?>
+            <?php if ($_SESSION['login_success'] == FALSE): ?>
+                <div class="alert alert-error">
+                    Usuario o contraseña incorrectos.
+                </div>
+            <?php endif ?>
+        <?php endif ?>
+
         <form action="login.php" method="post">
             <label for="email">Email</label>
-            <input type="email" name="email">
+            <input type="email" name="email" value="<?php echo getValueSession('login_form', 'email') ?>">
+            <?php if(hasError('login_errors', "email")): ?>
+                <div class="alert alert-error">Ingrese un email válido válido.</div>
+            <?php endif; ?>
 
             <label for="password">Contraseña</label>
             <input type="password" name="password">
+            <?php if(hasError('login_errors', "password")): ?>
+                <div class="alert alert-error">La contraseña es requerida.</div>
+            <?php endif; ?>
 
             <input class="btn" type="submit" value="Entrar">
         </form>
@@ -41,35 +64,37 @@ include_once 'helpers/utils.helper.php';
 
             <label for="firstName">Nombre</label>
             <input type="text" name="firstName" value="<?php echo getValueSession('register_form', 'firstName') ?>">
-            <?php if(hasError('errors_register', "firstName")): ?>
+            <?php if(hasError('register_errors', "firstName")): ?>
                 <div class="alert alert-error">Ingrese un nombre válido.</div>
             <?php endif; ?>
 
             <label for="lastName">Apellidos</label>
             <input type="text" name="lastName" value="<?php echo getValueSession('register_form', 'lastName') ?>">
-            <?php if(hasError('errors_register', "lastName")): ?>
+            <?php if(hasError('register_errors', "lastName")): ?>
                 <div class="alert alert-error">Ingrese un apellido válido.</div>
             <?php endif; ?>
 
             <label for="email">Email</label>
             <input type="email" name="email" value="<?php echo getValueSession('register_form', 'email') ?>">
-            <?php if(hasError('errors_register', "email")): ?>
+            <?php if(hasError('register_errors', "email")): ?>
                 <div class="alert alert-error">Ingrese un email válido válido.</div>
             <?php endif; ?>
 
             <label for="password">Contraseña</label>
             <input type="password" name="password">
-            <?php if(hasError('errors_register', "password")): ?>
+            <?php if(hasError('register_errors', "password")): ?>
                 <div class="alert alert-error">La contraseña es requerida.</div>
             <?php endif; ?>
 
             <?php
-                unset($_SESSION['errors_register']);
+                unset($_SESSION['register_errors']);
                 unset($_SESSION['register_form']);
-                unset($_SESSION['register_status']);
+                unset($_SESSION['register_success']);
+                unset($_SESSION['login_errors']);
+                unset($_SESSION['login_form']);
             ?>
 
-            <input class="btn" type="submit" name="submit" value="Registrar">
+            <input class="btn" type="submit" value="Registrar">
         </form>
     </div>
 </aside>

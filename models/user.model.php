@@ -13,54 +13,54 @@ class User extends Model {
     protected static $primaryKey = 'id';
 
     function setId($value) {
-        $this->setColumnValue('id', $value);
+        $this->setAttributeValue('id', $value);
     }
 
-    function getId($value) {
-        return $this->getColumnValue('id');
+    function getId() {
+        return $this->getAttributeValue('id');
     }
 
     function setFirstName($value) {
-        $this->setColumnValue('first_name', $value);
+        $this->setAttributeValue('first_name', $value);
     }
 
-    function getFirstName($value) {
-        return $this->getColumnValue('first_name');
+    function getFirstName() {
+        return $this->getAttributeValue('first_name');
     }
 
     function setLastName($value) {
-        $this->setColumnValue('last_name', $value);
+        $this->setAttributeValue('last_name', $value);
     }
 
-    function getLastName($value) {
-        return $this->getColumnValue('last_name');
+    function getLastName() {
+        return $this->getAttributeValue('last_name');
     }
 
     function setEmail($value) {
-        $this->setColumnValue('email', $value);
+        $this->setAttributeValue('email', $value);
     }
 
-    function getEmail($value) {
-        return $this->getColumnValue('email');
+    function getEmail() {
+        return $this->getAttributeValue('email');
     }
 
     function setPassword($value) {
-        $this->setColumnValue('password', $value);
+        $this->setAttributeValue('password', $value);
     }
 
-    function getPassword($value) {
-        return $this->getColumnValue('password');
+    function getPassword() {
+        return $this->getAttributeValue('password');
     }
 
-    function getCreatedAt($value) {
-        return $this->getColumnValue('created_at');
+    function getCreatedAt() {
+        return $this->getAttributeValue('created_at');
     }
 
-    function getUpdatedAt($value) {
-        return $this->getColumnValue('updated_at');
+    function getUpdatedAt() {
+        return $this->getAttributeValue('updated_at');
     }
 
-    function getDeletedAt($value) {
-        return $this->getColumnValue('deleted_at');
+    function getDeletedAt() {
+        return $this->getAttributeValue('deleted_at');
     }
 }

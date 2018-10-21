@@ -166,6 +166,7 @@ header {
     margin: 50px auto 0 auto;
 }
 
+.logged-in,
 .login,
 .register {
     display:block;
@@ -176,6 +177,7 @@ header {
     box-shadow: 0px 0px 1px rgba(0,0,0,0.3), 0px 3px 7px rgba(0,0,0,0.3), 0px 0px 1px #FFFFFF inset, 0px -3px 2px rgba(0,0,0,0.25) inset;
 }
 
+.logged-in h3,
 .login h3,
 .register h3 {
     margin-bottom: 15px;

@@ -38,3 +38,7 @@ function getValueSession($session, $field) {
 function encryptPassword($password) {
     return password_hash($password, PASSWORD_BCRYPT, ['const' => 4]);
 }
+
+function passwordVerify($password, $encryptedPassword) {
+    return password_verify($password, $encryptedPassword);
+}
