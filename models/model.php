@@ -21,6 +21,10 @@ class Model {
         $this->attributes = array();
     }
 
+    function getAllAttributes() {
+        return $this->attributes;
+    }
+
     function setAttributeValue($attribute, $value){
         $this->attributes[$attribute] = $value;
     }
@@ -29,8 +33,16 @@ class Model {
         return $this->attributes[$attribute];
     }
 
-    function getAllAttributes() {
-        return $this->attributes;
+    function getCreatedAt() {
+        return $this->getAttributeValue('created_at');
+    }
+
+    function getUpdatedAt() {
+        return $this->getAttributeValue('updated_at');
+    }
+
+    function getDeletedAt() {
+        return $this->getAttributeValue('deleted_at');
     }
 
      /**
@@ -62,7 +74,7 @@ class Model {
     /**
      * Devuelve un solo registro
      */
-    static function getOne($condition = array(), $order = NULL, $startIndex = NULL){
+    static function getOne($condition = array(), $order = NULL, $startIndex = NULL, $ignoreSoftDeleted = TRUE){
         $query = "SELECT * FROM " . static::$tableName;
         if(!empty($condition)){
             $query .= " WHERE ";
@@ -70,6 +82,7 @@ class Model {
                 $query .= $key . "=:".$key." AND ";
             }
         }
+        $query .= self::ignoreSoftDeleted($condition, $ignoreSoftDeleted);
         $query = rtrim($query,' AND ');
         if($order){
             $query .= " ORDER BY " . $order;
@@ -93,7 +106,66 @@ class Model {
         } else {
             return NULL;
         }
-
     }
+
+    /**
+     * Obtiene todos los registros de BD
+     * @example getAll(array(name=>'Bond',job=>'artist'),'age DESC',0,25) converts to SELECT * FROM TABLE WHERE name='Bond' AND job='artist' ORDER BY age DESC LIMIT 0,25
+     */
+    static function getAll($condition = array(), $order = NULL, $startIndex = NULL, $count = NULL, $ignoreSoftDeleted = TRUE) {
+        $query = "SELECT * FROM " . static::$tableName;
+        if(!empty($condition)) {
+            $query .= " WHERE ";
+            foreach ($condition as $key => $value) {
+                $query .= $key . "=:".$key." AND ";
+            }
+        }
+        $query .= self::ignoreSoftDeleted($condition, $ignoreSoftDeleted);
+        $query = rtrim($query,' AND ');
+        if($order){
+            $query .= " ORDER BY " . $order;
+        }
+        if($startIndex !== NULL){
+            $query .= " LIMIT " . $startIndex;
+            if($count){
+                $query .= "," . $count;
+            }
+        }
+        return self::get($query, $condition);
+    }
+
+    /**
+     * Obtiene los datos de la BD
+     * @example get('SELECT * FROM TABLE WHERE name=:user OR age<:age',array(name=>'Bond',age=>25))
+     */
+    static function get($query, $condition = array()){
+        $db = Database::getInstance();
+        $s = $db->prepare($query);
+        foreach ($condition as $key => $value) {
+            $condition[':'.$key] = $value;
+            unset($condition[$key]);
+        }
+        $s->execute($condition);
+        $result = $s->fetchAll(PDO::FETCH_ASSOC);
+        $collection = array();
+        $className = get_called_class();
+        foreach($result as $row){
+            $item = new $className();
+            $item->createFromDb($row);
+            array_push($collection, $item);
+        }
+        return $collection;
+    }
+
+    function ignoreSoftDeleted($condition, $ignore) {
+        if ($ignore) {
+            if(!empty($condition)) {
+                return "deleted_at IS NULL AND ";
+            } else {
+                return " WHERE deleted_at IS NULL AND ";
+            }
+        }
+    }
+
 
 }
