@@ -15,8 +15,9 @@ include_once 'helpers/utils.helper.php';
         <div class="logged-in">
             <h3><?php echo 'Bienvenido '.$user->getFirstName(); ?></h3>
 
-            <a class="btn btn-warning" href="logout.php">Crear Entradas</a>
-            <a class="btn btn-success" href="logout.php">Mis datos</a>
+            <a class="btn btn-success" href="logout.php">Crear Entradas</a>
+            <a class="btn btn-success" href="logout.php">Crear Categorías</a>
+            <a class="btn btn-warning" href="logout.php">Mis datos</a>
             <a class="btn btn-danger" href="logout.php">Cerrar Sesión</a>
         </div>
 
@@ -97,6 +98,7 @@ include_once 'helpers/utils.helper.php';
                     unset($_SESSION['register_success']);
                     unset($_SESSION['login_errors']);
                     unset($_SESSION['login_form']);
+                    unset($_SESSION['login_success']);
                 ?>
 
                 <input class="btn btn-primary" type="submit" value="Registrar">

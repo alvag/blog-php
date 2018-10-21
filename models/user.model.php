@@ -51,16 +51,4 @@ class User extends Model {
     function getPassword() {
         return $this->getAttributeValue('password');
     }
-
-    function getCreatedAt() {
-        return $this->getAttributeValue('created_at');
-    }
-
-    function getUpdatedAt() {
-        return $this->getAttributeValue('updated_at');
-    }
-
-    function getDeletedAt() {
-        return $this->getAttributeValue('deleted_at');
-    }
 }

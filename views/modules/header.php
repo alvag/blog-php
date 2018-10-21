@@ -27,12 +27,12 @@
         <nav class="menu">
             <ul>
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="index.php">Categoria 1</a></li>
-                <li><a href="index.php">Categoría 2</a></li>
-                <li><a href="/">Categoría 3</a></li>
-                <li><a href="/">Categoría 4</a></li>
-                <li><a href="/">Sobre mí</a></li>
-                <li><a href="/">Contacto</a></li>
+                <?php
+                    $categories = CategoryController::getAll();
+                    foreach ($categories as $category):
+                ?>
+                    <li><a href="category.php?id=<?php echo $category->getId() ?>"><?php echo $category->getName() ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </nav>
         <div class="clearfix"></div>
