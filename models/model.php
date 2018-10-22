@@ -4,12 +4,11 @@
 * Date: 2018/10/20
 * Time: 12:44:50
 */
+ require_once 'connection.php';
 
-/**
+ /**
  * Model base class
  */
-
- require_once 'connection.php';
 
 class Model {
 
