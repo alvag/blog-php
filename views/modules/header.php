@@ -40,5 +40,6 @@
 
     </header>
 
+    <!-- start container -->
     <div class="container">
     <!-- end header -->

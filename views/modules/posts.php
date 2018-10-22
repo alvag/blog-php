@@ -18,8 +18,8 @@
     <article class="post">
         <a href="">
             <h2><?php echo $post->getTitle() ?></h2>
+            <span class="post-info"><?= $post->getCategory()->getName() ." | ". $post->getCreatedAt() ?></span>
             <p><?php echo substr($post->getDescription(), 0, 180).'...' ?></p>
-            <p><?php echo $post->getCategory()->getName() ?></p>
             <p><?php echo $post->getUser()->getFirstName() ?></p>
         </a>
     </article>

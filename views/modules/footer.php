@@ -8,6 +8,7 @@
 ?>
 
 </div>
+<!-- end container -->
 
 <div class="clearfix"></div>
 

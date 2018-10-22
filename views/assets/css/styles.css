@@ -34,6 +34,12 @@ body {
     color: red;
 }
 
+.post-info {
+    color: #4e4e4e;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
 /* start header */
 header {
     width: 85%;
