@@ -10,40 +10,21 @@
 
     <h1>Últimas entradas</h1>
 
-    <article class="post">
-        <a href="">
-            <h2>Título de la entrada</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </a>
-    </article>
+    <?php
+        $posts = PostController::getAll();
+        foreach ($posts as $post):
+    ?>
 
     <article class="post">
         <a href="">
-            <h2>Título de la entrada</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <h2><?php echo $post->getTitle() ?></h2>
+            <p><?php echo substr($post->getDescription(), 0, 180).'...' ?></p>
+            <p><?php echo $post->getCategory()->getName() ?></p>
+            <p><?php echo $post->getUser()->getFirstName() ?></p>
         </a>
     </article>
 
-    <article class="post">
-        <a href="">
-            <h2>Título de la entrada</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </a>
-    </article>
-
-    <article class="post">
-        <a href="">
-            <h2>Título de la entrada</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </a>
-    </article>
-
-    <article class="post">
-        <a href="">
-            <h2>Título de la entrada</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </a>
-    </article>
+    <?php endforeach; ?>
 
     <div class="more">
         <a href="">Ver todas las entradas</a>

@@ -8,6 +8,7 @@
 require_once "controllers/template.controller.php";
 require_once 'controllers/user.controller.php';
 require_once 'controllers/category.controller.php';
+require_once 'controllers/post.controller.php';
 
 include_once 'helpers/utils.helper.php';
 

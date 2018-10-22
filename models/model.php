@@ -157,6 +157,15 @@ class Model {
         return $collection;
     }
 
+    /**
+     * Obtiene un registro por la primarykey
+     */
+    static function getByPrimaryKey($value, $ignoreSoftDeleted = TRUE) {
+        $condition = array();
+        $condition[static::$primaryKey] = $value;
+        return self::getOne($condition, NULL, NULL, $ignoreSoftDeleted);
+    }
+
     function ignoreSoftDeleted($condition, $ignore) {
         if ($ignore) {
             if(!empty($condition)) {

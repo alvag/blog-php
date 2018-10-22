@@ -13,4 +13,9 @@ class CategoryController {
         $category = new Category;
         return $category->getAll();
     }
+
+    static public function getOne($request) {
+        $category = new Category;
+        return $category->getOne($request);
+    }
 }
