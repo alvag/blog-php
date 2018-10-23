@@ -5,8 +5,9 @@
 * Time: 21:57:34
 */
 session_start();
-include_once 'helpers/utils.helper.php';
-require_once 'controllers/user.controller.php';
+require_once './config/routes_config.php';
+require_once DIR_CTRLS.'user.controller.php';
+include_once DIR_HELPERS.'utils.helper.php';
 
 if (isset($_POST)) {
 

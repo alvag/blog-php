@@ -4,13 +4,12 @@
 * Date: 2018/10/19
 * Time: 21:33:22
 */
+require_once 'config/routes_config.php';
+require_once DIR_CTRLS.'template.controller.php';
+require_once DIR_CTRLS.'user.controller.php';
+require_once DIR_CTRLS.'post.controller.php';
+session_start();
 
-require_once "controllers/template.controller.php";
-require_once 'controllers/user.controller.php';
-require_once 'controllers/category.controller.php';
-require_once 'controllers/post.controller.php';
-
-include_once 'helpers/utils.helper.php';
-
+include_once DIR_HELPERS.'/utils.helper.php';
 $template = new TemplateController();
 $template->template();

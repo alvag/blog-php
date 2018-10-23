@@ -249,6 +249,10 @@ input[type="submit"],
 
 /* start footer */
 footer {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
     clear:both;
     width: 85%;
     margin: 50px auto 0 auto;

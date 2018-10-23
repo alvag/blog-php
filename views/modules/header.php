@@ -4,6 +4,7 @@
 * Date: 2018/10/19
 * Time: 21:01:20
 */
+require_once 'controllers/category.controller.php';
 ?>
 
 <!DOCTYPE html>

@@ -4,8 +4,6 @@
 * Date: 2018/10/19
 * Time: 21:15:14
 */
-
-include_once 'helpers/utils.helper.php';
 ?>
 <!-- start sidebar -->
 <aside class="sidebar">
@@ -16,7 +14,7 @@ include_once 'helpers/utils.helper.php';
             <h3><?php echo 'Bienvenido '.$user->getFirstName(); ?></h3>
 
             <a class="btn btn-success" href="logout.php">Crear Entradas</a>
-            <a class="btn btn-success" href="logout.php">Crear Categorías</a>
+            <a class="btn btn-success" href="create-category.php">Crear Categorías</a>
             <a class="btn btn-warning" href="logout.php">Mis datos</a>
             <a class="btn btn-danger" href="logout.php">Cerrar Sesión</a>
         </div>

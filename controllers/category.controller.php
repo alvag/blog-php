@@ -5,9 +5,15 @@
 * Time: 15:48:42
 */
 
-require_once 'models/category.model.php';
+require_once DIR_MODELS.'category.model.php';
 
 class CategoryController {
+
+    static public function create($request) {
+        $category = new Category;
+        $category->setName($request['name']);
+        return $category->create();
+    }
 
     static function getAll() {
         $category = new Category;

@@ -5,7 +5,7 @@
 * Time: 21:46:54
 */
 
-include_once 'config/db_config.php';
+include_once DIR_CONFIG.'db_config.php';
 
 class DataBase {
 
