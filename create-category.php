@@ -5,12 +5,13 @@
 * Time: 06:25:06
 */
 
-require_once './models/user.model.php';
+require_once './config/routes_config.php';
+require_once DIR_MODELS.'user.model.php';
 session_start();
 require_once './check-auth.php';
-require_once './views/modules/header.php';
-require_once './views/modules/sidebar.php';
-require_once './helpers/utils.helper.php';
+require_once DIR_MODULES.'header.php';
+require_once DIR_MODULES.'sidebar.php';
+require_once DIR_HELPERS.'utils.helper.php';
 ?>
 
 <div class="main">
@@ -21,15 +22,14 @@ require_once './helpers/utils.helper.php';
         <label for="name">Nombre</label>
         <input type="text" name="name">
         <?php if(hasError('category_errors', "name")): ?>
-            <div class="alert alert-error">Ingrese el nombre de la categoría.</div>
-        <?php endif;
-            unset($_SESSION['category_errors']);
-        ?>
+            <div class="alert alert-error">Ingresa el nombre de la categoría.</div>
+        <?php endif; ?>
 
         <input class="btn btn-primary" type="submit" value="Guardar">
+
+        <?php unset($_SESSION['category_errors']); ?>
     </form>
 
 </div>
 
-
-<?php require_once 'views/modules/footer.php'; ?>
+<?php require_once DIR_MODULES.'footer.php'; ?>

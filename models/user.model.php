@@ -4,7 +4,7 @@
 * Date: 2018/10/20
 * Time: 11:58:40
 */
-require_once './config/routes_config.php';
+require_once dirname( dirname( __FILE__ ) ).'/config/routes_config.php';
 require_once DIR_MODELS.'model.php';
 
 class User extends Model {

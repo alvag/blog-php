@@ -20,7 +20,7 @@
             <h2><?php echo $post->getTitle() ?></h2>
             <span class="post-info"><?= $post->getCategory()->getName() ." | ". $post->getCreatedAt() ?></span>
             <p><?php echo substr($post->getDescription(), 0, 180).'...' ?></p>
-            <p><?php echo $post->getUser()->getFirstName() ?></p>
+            <p class="post-info">Autor: <?php echo $post->getUser()->getFirstName().' '.$post->getUser()->getLastName() ?></p>
         </a>
     </article>
 

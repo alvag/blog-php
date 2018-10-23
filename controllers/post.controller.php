@@ -5,9 +5,18 @@
 * Time: 17:31:03
 */
 
-require_once 'models/post.model.php';
+require_once DIR_MODELS.'post.model.php';
 
 class PostController {
+
+    static public function create($request) {
+        $post = new Post;
+        $post->setTitle($request['title']);
+        $post->setDescription($request['description']);
+        $post->setCategoryId($request['category_id']);
+        $post->setUserId($request['user_id']);
+        return $post->create();
+    }
 
     static function getAll() {
         $post = new Post;
