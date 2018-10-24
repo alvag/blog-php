@@ -5,7 +5,7 @@
 * Time: 17:31:03
 */
 
-require_once DIR_MODELS.'post.model.php';
+require_once DIR_MODELS.'Post.php';
 
 class PostController {
 

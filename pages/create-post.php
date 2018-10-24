@@ -5,14 +5,13 @@
 * Time: 22:21:48
 */
 
-require_once './config/routes_config.php';
-require_once DIR_MODELS.'user.model.php';
-require_once DIR_CTRLS.'category.controller.php';
-session_start();
-require_once './check-auth.php';
+require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
+require_once DIR_CTRLS.'CategoryController.php';
 require_once DIR_MODULES.'header.php';
 require_once DIR_MODULES.'sidebar.php';
-require_once DIR_HELPERS.'utils.helper.php';
+require_once DIR_HELPERS.'UtilsHelper.php';
+require_once SESSION_START;
+require_once CHECK_AUTH;
 ?>
 
 <div class="main">
@@ -20,7 +19,7 @@ require_once DIR_HELPERS.'utils.helper.php';
     <h1>Crear Entradas</h1>
     <p>Añade una nueva entrada al blog.</p>
 
-    <form action="./actions/save-post.php" method="POST" style="margin-top: 20px">
+    <form action="<?=DIR_ACTIONS.'save-post.php'?>" method="POST" style="margin-top: 20px">
         <label for="title">Titulo</label>
         <input type="text" name="title" value="<?php echo getValueSession('post_form', 'title') ?>">
         <?php if(hasError('post_errors', "title")): ?>

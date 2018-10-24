@@ -5,7 +5,8 @@
 * Time: 14:01:03
 */
 
-require_once 'models/user.model.php';
+require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
+require_once DIR_MODELS.'User.php';
 
 class UserController {
 

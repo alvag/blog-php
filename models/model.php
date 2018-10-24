@@ -4,7 +4,7 @@
 * Date: 2018/10/20
 * Time: 12:44:50
 */
- require_once 'connection.php';
+ require_once DIR_CONFIG.'connection.php';
 
  /**
  * Model base class

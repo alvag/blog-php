@@ -4,7 +4,7 @@
 * Date: 2018/10/19
 * Time: 21:01:20
 */
-require_once 'controllers/category.controller.php';
+require_once DIR_CTRLS.'CategoryController.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,20 +14,20 @@ require_once 'controllers/category.controller.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog de Videojuegos</title>
-    <link rel="stylesheet" href="./views/assets/css/styles.css">
+    <link rel="stylesheet" href="/views/assets/css/styles.css">
 </head>
 <body>
     <!-- start header -->
     <header>
 
         <div class="logo">
-            <a href="index.php">Blog de Videojuegos</a>
+            <a href="/">Blog de Videojuegos</a>
         </div>
 
         <!-- start menu -->
         <nav class="menu">
             <ul>
-                <li><a href="index.php">Inicio</a></li>
+                <li><a href="/">Inicio</a></li>
                 <?php
                     $categories = CategoryController::getAll();
                     foreach ($categories as $category):

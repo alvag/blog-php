@@ -4,6 +4,10 @@
 * Date: 2018/10/19
 * Time: 21:15:14
 */
+
+require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
+require_once DIR_MODELS.'User.php';
+require_once SESSION_START;
 ?>
 <!-- start sidebar -->
 <aside class="sidebar">
@@ -13,9 +17,9 @@
         <div class="logged-in">
             <h3><?php echo 'Bienvenido '.$user->getFirstName(); ?></h3>
 
-            <a class="btn btn-success" href="create-post.php">Crear Entradas</a>
-            <a class="btn btn-success" href="create-category.php">Crear Categorías</a>
-            <a class="btn btn-warning" href="logout.php">Mis datos</a>
+            <a class="btn btn-success" href="<?=DIR_PAGES.'create-post.php'?>">Crear Entradas</a>
+            <a class="btn btn-success" href="<?=DIR_PAGES.'create-category.php'?>">Crear Categorías</a>
+            <a class="btn btn-warning" href="<?=DIR_PAGES.'my-account.php'?>">Mis datos</a>
             <a class="btn btn-danger" href="logout.php">Cerrar Sesión</a>
         </div>
 

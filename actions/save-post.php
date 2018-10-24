@@ -5,11 +5,12 @@
 * Time: 22:42:39
 */
 
-require_once dirname( dirname( __FILE__ ) ).'/config/routes_config.php';
-require_once DIR_MODELS.'user.model.php';
-session_start();
-require_once DIR_CTRLS.'post.controller.php';
-require_once DIR_HELPERS.'utils.helper.php';
+require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
+require_once DIR_MODELS.'User.php';
+require_once DIR_CTRLS.'PostController.php';
+require_once DIR_HELPERS.'UtilsHelper.php';
+require_once SESSION_START;
+require_once CHECK_AUTH;
 
 if (isset($_POST)) {
     $request['title'] = getValue($_POST['title']);
@@ -43,7 +44,7 @@ if (isset($_POST)) {
         $_SESSION['post_errors'] = $errors;
     }
 
-    header('Location: /create-post.php');
+    header('Location: '.DIR_PAGES.'create-post.php');
 
 
 

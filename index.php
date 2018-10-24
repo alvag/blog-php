@@ -5,11 +5,11 @@
 * Time: 21:33:22
 */
 require_once 'config/routes_config.php';
-require_once DIR_CTRLS.'template.controller.php';
-require_once DIR_CTRLS.'user.controller.php';
-require_once DIR_CTRLS.'post.controller.php';
+require_once DIR_CTRLS.'TemplateController.php';
+require_once DIR_CTRLS.'UserController.php';
+require_once DIR_CTRLS.'PostController.php';
 session_start();
 
-include_once DIR_HELPERS.'/utils.helper.php';
+include_once DIR_HELPERS.'/UtilsHelper.php';
 $template = new TemplateController();
 $template->template();

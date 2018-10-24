@@ -5,9 +5,9 @@
 * Time: 17:30:32
 */
 
-require_once DIR_MODELS.'model.php';
-require_once DIR_MODELS.'category.model.php';
-require_once DIR_MODELS.'user.model.php';
+require_once DIR_MODELS.'Model.php';
+require_once DIR_MODELS.'Category.php';
+require_once DIR_MODELS.'User.php';
 
 class Post extends Model {
 

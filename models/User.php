@@ -5,7 +5,7 @@
 * Time: 11:58:40
 */
 require_once dirname( dirname( __FILE__ ) ).'/config/routes_config.php';
-require_once DIR_MODELS.'model.php';
+require_once DIR_MODELS.'Model.php';
 
 class User extends Model {
 

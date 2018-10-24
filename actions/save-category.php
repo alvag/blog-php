@@ -6,9 +6,9 @@
 */
 
 session_start();
-require_once '../config/routes_config.php';
-require_once DIR_CTRLS.'category.controller.php';
-require_once DIR_HELPERS.'utils.helper.php';
+require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
+require_once DIR_CTRLS.'CategoryController.php';
+require_once DIR_HELPERS.'UtilsHelper.php';
 
 if (isset($_POST)) {
     $request['name']  = getValue($_POST['name']);
@@ -33,5 +33,5 @@ if (isset($_POST)) {
         $_SESSION['category_errors'] = $errors;
     }
 
-    header('Location: /create-category.php');
+    header('Location: '.DIR_PAGES.'create-category.php');
 }

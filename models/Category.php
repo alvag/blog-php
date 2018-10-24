@@ -5,7 +5,7 @@
 * Time: 15:44:18
 */
 
-require_once 'model.php';
+require_once 'Model.php';
 
 class Category extends Model {
 

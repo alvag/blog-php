@@ -5,7 +5,7 @@
 * Time: 15:48:42
 */
 
-require_once DIR_MODELS.'category.model.php';
+require_once DIR_MODELS.'Category.php';
 
 class CategoryController {
 
