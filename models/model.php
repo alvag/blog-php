@@ -71,6 +71,27 @@ class Model {
     }
 
     /**
+     * Actualiza un registro en la base de datos.
+     */
+    function update(){
+        $class = get_called_class();
+        $query =  "UPDATE " . static::$tableName . " (" . implode(",", array_keys($this->attributes)) . ") VALUES(";
+        $keys = array();
+        foreach ($this->attributes as $key => $value) {
+            $keys[":".$key] = $value;
+        }
+        $query .= implode(",", array_keys($keys)).")";
+        $query .+ " WHERE id=".static::$primaryKey;
+
+        var_dump($query);
+        die();
+        $db = Database::getInstance()->prepare($query);
+        try {
+            return $db->execute($keys);
+        } catch (Exception $e) {}
+    }
+
+    /**
      * Devuelve un solo registro
      */
     static function getOne($condition = array(), $order = NULL, $startIndex = NULL, $ignoreSoftDeleted = TRUE){

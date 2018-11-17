@@ -5,8 +5,7 @@
 * Time: 21:15:14
 */
 
-require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
-require_once DIR_MODELS.'User.php';
+require DIR_BASE."/autoloader.php";
 require_once SESSION_START;
 ?>
 <!-- start sidebar -->
@@ -38,13 +37,14 @@ require_once SESSION_START;
 
             <form action="login.php" method="post">
                 <label for="email">Email</label>
-                <input type="email" name="email" value="<?php echo getValueSession('login_form', 'email') ?>">
+                <!-- <input type="email" name="email" value="<?php echo getValueSession('login_form', 'email') ?>"> -->
+                <input type="email" name="email" value="alva85@gmail.com">
                 <?php if(hasError('login_errors', "email")): ?>
                     <div class="alert alert-error">Ingrese un email válido válido.</div>
                 <?php endif; ?>
 
                 <label for="password">Contraseña</label>
-                <input type="password" name="password">
+                <input type="password" name="password" value="123">
                 <?php if(hasError('login_errors', "password")): ?>
                     <div class="alert alert-error">La contraseña es requerida.</div>
                 <?php endif; ?>

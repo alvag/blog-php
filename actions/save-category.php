@@ -4,11 +4,11 @@
 * Date: 2018/10/22
 * Time: 07:34:27
 */
+require  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
+require DIR_BASE."/autoloader.php";
+require CHECK_AUTH;
+require DIR_HELPERS.'UtilsHelper.php';
 
-session_start();
-require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
-require_once DIR_CTRLS.'CategoryController.php';
-require_once DIR_HELPERS.'UtilsHelper.php';
 
 if (isset($_POST)) {
     $request['name']  = getValue($_POST['name']);

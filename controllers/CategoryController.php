@@ -5,7 +5,7 @@
 * Time: 15:48:42
 */
 
-require_once DIR_MODELS.'Category.php';
+require DIR_BASE."/autoloader.php";
 
 class CategoryController {
 

@@ -4,7 +4,8 @@
 * Date: 2018/10/19
 * Time: 21:01:20
 */
-require_once DIR_CTRLS.'CategoryController.php';
+require DIR_BASE."/autoloader.php";
+require DIR_HELPERS.'UtilsHelper.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +16,7 @@ require_once DIR_CTRLS.'CategoryController.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog de Videojuegos</title>
     <link rel="stylesheet" href="/views/assets/css/styles.css">
+    <base href="/">
 </head>
 <body>
     <!-- start header -->

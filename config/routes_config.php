@@ -5,7 +5,6 @@
 * Time: 21:28:32
 */
 define('DIR_BASE',      $_SERVER['DOCUMENT_ROOT'] . '/');
-//define('DIR_BASE',      dirname( dirname( __FILE__ ) ) . '/');
 define('DIR_MODULES',     DIR_BASE . 'views/modules/');
 define('DIR_CTRLS',      DIR_BASE . 'controllers/');
 define('DIR_MODELS',      DIR_BASE . 'models/');

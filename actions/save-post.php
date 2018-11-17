@@ -5,12 +5,10 @@
 * Time: 22:42:39
 */
 
-require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
-require_once DIR_MODELS.'User.php';
-require_once DIR_CTRLS.'PostController.php';
-require_once DIR_HELPERS.'UtilsHelper.php';
-require_once SESSION_START;
-require_once CHECK_AUTH;
+require $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
+require DIR_BASE."/autoloader.php";
+require CHECK_AUTH;
+require DIR_HELPERS.'UtilsHelper.php';
 
 if (isset($_POST)) {
     $request['title'] = getValue($_POST['title']);

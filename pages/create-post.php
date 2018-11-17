@@ -5,13 +5,10 @@
 * Time: 22:21:48
 */
 
-require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
-require_once DIR_CTRLS.'CategoryController.php';
-require_once DIR_MODULES.'header.php';
-require_once DIR_MODULES.'sidebar.php';
-require_once DIR_HELPERS.'UtilsHelper.php';
-require_once SESSION_START;
-require_once CHECK_AUTH;
+require  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
+require DIR_MODULES.'header.php';
+require DIR_MODULES.'sidebar.php';
+require CHECK_AUTH;
 ?>
 
 <div class="main">

@@ -5,8 +5,7 @@
 * Time: 14:01:03
 */
 
-require_once  $_SERVER['DOCUMENT_ROOT'].'/config/routes_config.php';
-require_once DIR_MODELS.'User.php';
+require DIR_BASE."/autoloader.php";
 
 class UserController {
 
@@ -23,5 +22,14 @@ class UserController {
         $user = new User;
         return $user->getOne($request);
     }
+
+    static public function update($request) {
+        $user = new User;
+        $user->setFirstName($request['firstName']);
+        $user->setLastName($request['lastName']);
+        $user->setEmail($request['email']);
+        return $user->getOne();
+    }
+
 
 }

@@ -5,7 +5,7 @@
 * Time: 17:31:03
 */
 
-require_once DIR_MODELS.'Post.php';
+require DIR_BASE."/autoloader.php";
 
 class PostController {
 
